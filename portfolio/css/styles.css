@@ -1,0 +1,76 @@
+:root {
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --text:#0f172a;
+  --max-w:1100px;
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body {
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  line-height:1.5;
+  color:var(--text);
+  background:var(--bg);
+}
+.container{max-width:var(--max-w);margin:0 auto;padding:1rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.site-header{border-bottom:1px solid #e6e9ef;background:#fff;position:sticky;top:0;z-index:40}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;text-decoration:none;color:var(--text)}
+.nav-toggle{background:transparent;border:0;font-size:1.2rem;padding:0.4rem}
+.primary-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.primary-nav a{text-decoration:none;color:var(--muted)}
+
+.hero{padding:2.2rem 0;background:linear-gradient(180deg, rgba(14,165,164,0.06), transparent)}
+.hero h1{font-size:1.6rem;margin:0 0 .3rem}
+.lead{margin:0 0 1rem;color:var(--muted)}
+.btn{display:inline-block;padding:.6rem 1rem;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+
+.hero-content {
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  flex-wrap:wrap;
+}
+.profile-pic {
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--accent);
+}
+
+.section{padding:1.8rem 0}
+.section.alt{background:#fbfbfd}
+.muted{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(12,15,20,0.04)}
+.card img{width:100%;height:160px;object-fit:cover;display:block}
+.card-body{padding:0.9rem}
+.card h3{margin:.2rem 0}
+
+.contact-form label{display:block;margin-top:.6rem;font-size:.95rem}
+.contact-form input,.contact-form textarea{width:100%;padding:.6rem;border:1px solid #e6e9ef;border-radius:8px;margin-top:.25rem}
+
+.site-footer{border-top:1px solid #eef2f7;padding:1rem 0;text-align:center;font-size:.9rem;color:var(--muted)}
+
+@media(min-width:640px){
+  .hero h1{font-size:2rem}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:980px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .primary-nav ul{gap:1.5rem}
+}
+
+@media(max-width:799px){
+  .primary-nav{position:absolute;right:1rem;top:64px;background:#fff;padding:0.8rem;border-radius:10px;box-shadow:0 8px 30px rgba(12,15,20,0.08);display:none}
+  .primary-nav.open{display:block}
+  .primary-nav ul{flex-direction:column}
+}
